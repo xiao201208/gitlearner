@@ -1,0 +1,22 @@
+git commond
+git init：初始化
+git config --global user.name "Your Name"
+git config --global user.email "email@email.com"
+git add filename 添加文件到缓存区
+git commit -m "notes" 把文件从缓存区提交	
+git status 查看状态
+git diff filename 查看文件改动
+git log --pretty=oneline 单行形式查看提交日志
+git reset --hard HEAD^ 退回到上一个版本（--hard HEAD^^^ 上三个版本；--hard HEAD~100 上一百个版本）
+git reflog 操作日志
+git checkout -- filename 丢弃掉工作区的更改（其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。）
+git reset HEAD filename 撤销添加到缓存区的操作
+git rm filename 删除文件
+
+撤销修改小结:
+场景1：当你改乱了工作区某个文件的内容，想直接丢弃工作区的修改时，用命令git checkout -- file。
+场景2：当你不但改乱了工作区某个文件的内容，还添加到了暂存区时，想丢弃修改，分两步，第一步用命令git reset HEAD file，就回到了场景1，第二步按场景1操作。
+场景3：已经提交了不合适的修改到版本库时，想要撤销本次提交，参考git reset --hard HEAD^命令，不过前提是没有推送到远程库。
+
+
+
