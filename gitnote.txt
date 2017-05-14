@@ -77,3 +77,14 @@ feature分支是否推到远程，取决于你是否和你的小伙伴合作在�
 如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令git branch --set-upstream branch-name origin/branch-name。
 
 git checkout -b dev origin/dev 创建远程origin的dev分支到本地
+
+git tag <name> 创建标签，默认为HEAD，也可以指定一个commit id
+git tag -a <tagname> -m "blabla..." 指定标签名（-a）和标签说明（-m）
+git tag -s <tagname> -m "blabla..." 用PGP前面标签，用法参考：https://help.github.com/articles/generating-a-new-gpg-key/
+git tag 查看所有标签
+git tag -d <tagname> 删除一个标签
+git push origin <tagname> 推送一个本地标签
+git push origin --tags 推送全部未推送郭的标签
+git push origin :refs/tags/<tagname> 删除一个远程标
+
+.gitignore 设置要忽略的文件
